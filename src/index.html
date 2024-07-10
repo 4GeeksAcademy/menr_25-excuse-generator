@@ -1,29 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-      crossorigin="anonymous"
-    />
-    <link rel="shortcut icon" href="./4geeks.ico" />
+    <title>Excuse Generator</title>
   </head>
-  <body>
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
+  <body class="bg-dark">
+    <!--Navbar-->
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          Miguel E. Navas R. - Excuse Generator
+        </a>
+      </div>
+    </nav>
+    <!--End Navbar-->
+
+    <!--Excuse Generator-->
+    <div class="d-flex align-items-center vh-100">
+      <div class="container text-center">
+        <h1 class="mt-5 text-light">OMG! you will not bealieve me but...</h1>
+        <p id="excuse" class="text-danger">My dog ate my homework</p>
+        <script src="app.js"></script>
+        <button id="button" type="button" class="btn btn-danger">
+          Change Excuse
+        </button>
       </div>
     </div>
+    <!--EndExcuse Generator-->
   </body>
 </html>
