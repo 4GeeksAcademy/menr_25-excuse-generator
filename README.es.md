@@ -13,7 +13,7 @@ Del archivo original, he modificado solo los archivos
 
 > app.js
 
-## INDEX.html
+### INDEX.html
 ```
 <!DOCTYPE html>
 <html lang="en">
@@ -59,7 +59,7 @@ Del archivo original, he modificado solo los archivos
 
 <img width="1662" alt="Website" src="https://github.com/4GeeksAcademy/menr_25-excuse-generator/assets/143790463/0d4df411-675c-4cb9-9669-3d22b84aabe1">
 
-## APP.js
+### APP.js
 ```
 import "bootstrap";
 import "./style.css";
