@@ -100,4 +100,4 @@ window.onload = function() {
 };
 ```
 
-![Alt text](../src/assets/img/Website.png?raw=true "Website")
+<img width="649" alt="Excuse+Button" src="https://github.com/4GeeksAcademy/menr_25-excuse-generator/assets/143790463/8afd8931-dfbd-4370-aaa7-5bcebc22924d">
