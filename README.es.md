@@ -96,3 +96,5 @@ window.onload = function() {
   document.getElementById("button").addEventListener("click", changeText);
 };
 ```
+
+![Alt text](../src/assets/img/Website.png?raw=true "Website")
