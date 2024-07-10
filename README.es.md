@@ -1,47 +1,96 @@
-# Hola Mundo con Vanilla JS
+# Miguel E. Navas R.
+## _Excuse Generator_
 
-Empieza a programar un sitio web JS/HTML/CSS en 30 segundos abriendo esta plantilla con nuestro puente de [One-Click Coding](https://s.4geeks.com/start?repo=https://github.com/4GeeksAcademy/vanillajs-hello) o localmente en tu computador.
+Antes de empezar a corregir mi proyecto sugiero instalar los paquetes escribiendo: ```$ npm install ```
 
-## Antes de empezar
+Para ejecutar mi sitio web para ver los cambios en el browser; escribe en la línea de comandos ``` $ npm run start ```
 
-Una vez tu editor de codigo este abierto, instala los paquetes escribiendo: `npm install`.
+He creado este pequeño sitio web que genera una excusa cada vez que se hace click en el boton [Change Excuse].
 
-### ¿Cómo ejecuto mi sitio web para ver los cambios en vivo?
+Del archivo original, he modificado solo los archivos
+> index.html
+> app.js
 
-Escribe en la línea de comandos `$ npm run start` y escribe localhost en el navegador.
-
-### ¿Dónde escribo mi código?
-
-Depende del lenguaje, pero tienes `./src/app.js`, `./src/style.css` y `./src/index.html` respectivamente. Puedes agregar nuevos `.html` como desees, solo asegúrate de importarlo en el `app.js`.
-
-> Nota: recuerda que el flujo de trabajo de JS comienza dentro de `window.onload`.
-
-## Resolución de problemas
-
-### No veo mis cambios...
-
-Cada vez que cambies cualquier archivo dentro de la carpeta `./src`, la URL pública del sitio web se actualizará automáticamente (es un proceso llamado hot deploy). Recuerda también actualizar limpiando la caché (`command+shift+r` en Mac, `control+shift+r` en PC y Linux).
-
-### ¿Cómo incluyo más imágenes en mi proyecto?
-
-Agrégalas dentro de la carpeta `./src/assets/img` y luego impórtalas desde cualquiera de tus archivos JS. Ejemplo: `import "../assets/img/rigo-baby.jpg";`.
-
-### ¿Cómo incluyo más archivos JS?
-
-Simplemente agrega los archivos en la carpeta src e importa los archivos/variables en tu app.js. Ejemplo: `import myVar from "./file2.js"`.
-
-### ¿Cómo publico el sitio web?
-
-Esta plantilla es 100% compatible con el alojamiento gratuito de GitHub Pages. Publica tu sitio web ejecutando:
-
-```bash
-$ npm run deploy
+## INDEX.html
 ```
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="In this website you will find an excuse generator created as a practice on JavaScript"
+    />
+    <meta
+      name="keywords"
+      content="html, css, bootstrap, javascript, practice, 4geeksacademy"
+    />
+    <meta name="author" content="Miguel E. Navas R." />
+    <title>Excuse Generator</title>
+  </head>
+  <body class="bg-dark">
+    <!--Title-->
+    <h4 class="text-primary ms-3 pt-3">
+      Miguel E. Navas R. - Excuse Generator
+    </h4>
+    <!--End Title-->
 
-¡Muy fácil y en solo un paso! Sube a tu rama __main__ y utiliza el alojamiento gratuito que viene con [GitHub Pages](https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/#enabling-github-pages-to-publish-your-site-from-master-or-gh-pages), el proyecto está listo para ser publicado. Recuerda elegir ejecutar la Página de GitHub desde tu rama principal.
+    <!--Excuse Generator-->
+    <div class="d-flex align-items-center vh-100">
+      <div class="container text-center">
+        <h1 class="mt-5 text-light">OMG! you will not bealieve me but...</h1>
+        <p id="excuse" class="text-danger">My dog ate my homework</p>
+        <script src="app.js"></script>
 
-### Gracias
+        <!--Button-->
+        <button id="button" type="button" class="btn btn-danger">
+          Change Excuse
+        </button>
+        <!--End Button-->
+      </div>
+    </div>
+    <!--EndExcuse Generator-->
+  </body>
+</html>
+```
+##APP.js
+```
+import "bootstrap";
+import "./style.css";
 
-Esta plantilla fue creada como parte del [curso de programacion](https://4geeksacademy.com/es/curso-de-programacion-desde-cero?lang=es) de 4Geeks Academy por [Alejandro Sanchez](https://twitter.com/alesanchezr) y muchos otros contribuyentes. Descubre más sobre nuestro [Curso de Desarrollador Full Stack](https://4geeksacademy.com/es/coding-bootcamps/desarrollador-full-stack?lang=es), [Bootcamp de Ciencia de Datos](https://4geeksacademy.com/es/coding-bootcamps/curso-datascience-machine-learning?lang=es) o [Curso de Ciberseguridad](https://4geeksacademy.com/es/coding-bootcamps/curso-ciberseguridad?lang=es).
+import "./assets/img/rigo-baby.jpg";
+import "./assets/img/4geeks.ico";
 
-Puedes encontrar otras plantillas y recursos como este en la [página de GitHub de la escuela](https://github.com/4geeksacademy/).
+window.onload = function() {
+  function excuseGenerator() {
+    let who = ["The dog", "My grandma", "The mailman", "My bird"];
+    let action = ["ate", "peed", "crushed", "broke"];
+    let what = ["my homework", "my phone", "the car"];
+    let when = [
+      "before the class.",
+      "when I was sleeping.",
+      "while I was exercising.",
+      "during my lunch.",
+      "while I was praying."
+    ];
+
+    function randomElement(array) {
+      return array[Math.floor(Math.random() * array.length)];
+    }
+
+    let excuse = `${randomElement(who)} ${randomElement(
+      action
+    )} ${randomElement(what)} ${randomElement(when)}`;
+
+    return excuse;
+  }
+
+  function changeText() {
+    let paragraph = document.getElementById("excuse");
+    paragraph.innerText = excuseGenerator();
+  }
+
+  document.getElementById("button").addEventListener("click", changeText);
+};
+```
