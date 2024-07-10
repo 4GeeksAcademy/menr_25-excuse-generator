@@ -8,6 +8,7 @@ Para ejecutar mi sitio web para ver los cambios en el browser; escribe en la lí
 He creado este pequeño sitio web que genera una excusa cada vez que se hace click en el boton [Change Excuse].
 
 Del archivo original, he modificado solo los archivos
+
 > index.html
 > app.js
 
@@ -54,7 +55,7 @@ Del archivo original, he modificado solo los archivos
   </body>
 </html>
 ```
-##APP.js
+## APP.js
 ```
 import "bootstrap";
 import "./style.css";
